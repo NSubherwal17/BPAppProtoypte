@@ -17,22 +17,36 @@ struct EnterNewDataView: View {
     
     var body: some View {
         
-        VStack (alignment: .center, spacing: 20) {
-            
-            Text("New Blood Pressure")
-                .font(.headline)
+        Text("New Blood Pressure")
+            .font(.headline)
+        
+        VStack (alignment: .leading, spacing: 20) {
             
             DatePicker("Date", selection: $newDate, in: Date.distantPast...Date.now, displayedComponents: [.date])
+                //.labelsHidden()
+            
+            Divider()
             
             DatePicker("Time", selection: $newTime, displayedComponents: [.hourAndMinute])
+                //.labelsHidden()
             
+            Divider()
+
             TextField("Systolic", value: $newSystolic, format: .number)
             
+            Divider()
+            
             TextField("Diastolic", value: $newDiastolic, format: .number)
+            
+            Divider()
             
             TextField("Pulse", value: $newPulse, format: .number)
             
         }//vstack
+        .padding()
+        .background(Color("Secondary Background"))
+        .cornerRadius(20)
+        .padding()
         
     }//body
     

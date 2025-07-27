@@ -29,7 +29,7 @@ struct ContentView: View {
                         .padding()
                         .foregroundColor(Color("Secondary Text"))
                         .background(Color("Secondary Background"))
-                        .cornerRadius(15)
+                        .cornerRadius(20)
                         .padding()
                     
                 }//button
