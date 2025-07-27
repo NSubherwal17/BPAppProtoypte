@@ -9,17 +9,30 @@ import SwiftUI
 
 struct EnterNewDataView: View {
     
-    @State private var bpReading: [BPReading] = [
-        
-        BPReading(date: .now, time: .now, systolic: 118, diastolic: 24, pulse: 84)
-        
-    ]//@state
+    @State private var newDate = Date.now
+    @State private var newTime = Date.now
+    @State private var newSystolic: Int? = nil
+    @State private var newDiastolic: Int? = nil
+    @State private var newPulse: Int? = nil
     
     var body: some View {
         
-        List(bpReading, id: \.systolic) { friend in
+        VStack (alignment: .center, spacing: 20) {
             
-        }//list
+            Text("New Blood Pressure")
+                .font(.headline)
+            
+            DatePicker("Date", selection: $newDate, in: Date.distantPast...Date.now, displayedComponents: [.date])
+            
+            DatePicker("Time", selection: $newTime, displayedComponents: [.hourAndMinute])
+            
+            TextField("Systolic", value: $newSystolic, format: .number)
+            
+            TextField("Diastolic", value: $newDiastolic, format: .number)
+            
+            TextField("Pulse", value: $newPulse, format: .number)
+            
+        }//vstack
         
     }//body
     
