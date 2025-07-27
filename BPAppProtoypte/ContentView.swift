@@ -13,39 +13,49 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack {
+        ZStack {
             
-            HStack {
+            VStack {
                 
-                Text("Summary")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                HStack {
+                    
+                    Text("Summary")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    Spacer()
+                    
+                }//hstack
+                .padding()
                 
                 Spacer()
                 
-            }//hstack
-            .padding()
+                Button {
+                    
+                    createNewReading = true
+                    
+                } label: {
+                    
+                    Text("Enter new blood pressure reading")
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .padding()
+                        .foregroundColor(Color("Secondary Text"))
+                        .background(Color("Secondary Background"))
+                        .cornerRadius(15)
+                        .padding()
+                    
+                }//button
+                
+            }//vstack
             
-            Spacer()
+            .sheet(isPresented: $createNewReading, content: {
+                
+                EnterNewDataView()
+                
+            })//sheet
             
-            Button {
-                
-                createNewReading = true
-                
-            } label: {
-                
-                Text("Enter new blood pressure reading")
-                    .font(.body)
-                    .fontWeight(.medium)
-                    .padding()
-                    .foregroundColor(Color("Secondary Text"))
-                    .background(Color("Secondary Background"))
-                    .cornerRadius(15)
-                    .padding()
-                
-            }//button
-            
-        }//vstack
+        }//zstack
         
     }//body
     
