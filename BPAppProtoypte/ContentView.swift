@@ -12,23 +12,10 @@ struct ContentView: View {
     @State private var createNewReading = false
     
     var body: some View {
-        
-        ZStack {
+            
+        NavigationStack {
             
             VStack {
-                
-                HStack {
-                    
-                    Text("Summary")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                    
-                }//hstack
-                .padding()
-                
-                Spacer()
                 
                 Button {
                     
@@ -55,7 +42,9 @@ struct ContentView: View {
                 
             })//sheet
             
-        }//zstack
+            .navigationTitle("Summary")
+            
+        }//navstack
         
     }//body
     

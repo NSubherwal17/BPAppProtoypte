@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct EnterNewDataView: View {
+    
+    @State private var bpReading: [BPReading] = [
+        
+        BPReading(date: .now, time: .now, systolic: 118, diastolic: 24, pulse: 84)
+        
+    ]//@state
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        
+        List(bpReading, id: \.systolic) { friend in
+            
+        }//list
+        
+    }//body
+    
+}//struct
 
 #Preview {
+    
     EnterNewDataView()
+    
 }
