@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var createNewReading = false
+    
     var body: some View {
         
         VStack {
@@ -24,7 +26,24 @@ struct ContentView: View {
             }//hstack
             .padding()
             
-        Spacer()
+            Spacer()
+            
+            Button {
+                
+                createNewReading = true
+                
+            } label: {
+                
+                Text("Enter new blood pressure reading")
+                    .font(.body)
+                    .fontWeight(.medium)
+                    .padding()
+                    .foregroundColor(Color("Secondary Text"))
+                    .background(Color("Secondary Background"))
+                    .cornerRadius(15)
+                    .padding()
+                
+            }//button
             
         }//vstack
         
