@@ -27,7 +27,7 @@ struct ContentView: View {
                         .font(.body)
                         .fontWeight(.medium)
                         .padding()
-                        .foregroundColor(Color("Secondary Text"))
+                        .foregroundColor(.black)
                         .background(Color("Secondary Background"))
                         .cornerRadius(20)
                         .padding()
