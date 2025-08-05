@@ -79,8 +79,7 @@ struct EnterNewDataView: View {
                             Image("face1")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
-                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.gray)))
-                            
+                                .opacity(moodRating == 1 || moodRating == nil ? 1.0 : 0.3)
                             
                         }//button
                         
@@ -93,7 +92,7 @@ struct EnterNewDataView: View {
                             Image("face2")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
-                                .padding(.bottom, 4.0)
+                                .opacity(moodRating == 2 || moodRating == nil ? 1.0 : 0.3)
                             
                         }//button
                         
@@ -106,6 +105,7 @@ struct EnterNewDataView: View {
                             Image("face3")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
+                                .opacity(moodRating == 3 || moodRating == nil ? 1.0 : 0.3)
                             
                         }//button
                         
@@ -118,6 +118,7 @@ struct EnterNewDataView: View {
                             Image("face4")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
+                                .opacity(moodRating == 4 || moodRating == nil ? 1.0 : 0.3)
                             
                         }//button
                         
@@ -130,6 +131,20 @@ struct EnterNewDataView: View {
                             Image("face5")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
+                                .opacity(moodRating == 5 || moodRating == nil ? 1.0 : 0.3)
+                            
+                        }//button
+                        
+                        Button {
+                            
+                            moodRating = 6
+                            
+                        } label: {
+                            
+                            Image("face6")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .opacity(moodRating == 6 || moodRating == nil ? 1.0 : 0.3)
                             
                         }//button
                         
