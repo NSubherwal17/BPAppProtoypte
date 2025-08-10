@@ -177,7 +177,7 @@ struct EnterNewDataView: View {
                     
                     VStack(alignment: .leading) {
                         
-                        Text("Notes")
+                        Text("Notes (optional)")
                             .padding([.top, .leading, .trailing])
                         
                         ZStack {
@@ -272,18 +272,28 @@ struct EnterNewDataView: View {
     
     private var isFormValid: Bool {
         
-        return newSystolic != nil && newDiastolic != nil && newPulse != nil
+        return newSystolic != nil && newDiastolic != nil && newPulse != nil && newMoodRating != nil
         
     }//var
     
     private func saveReading() {
         
         guard let systolic = newSystolic,
-              let diastolic = newDiastolic,
-              let pulse = newPulse
+            let diastolic = newDiastolic,
+            let pulse = newPulse
+            //let moodRating = newMoodRating
         else {
             
             alertMessage = "Please fill in all required fields (Systolic, Diastolic, and Pulse)"
+            showAlert = true
+            return
+            
+        }//else statement
+        
+        guard newMoodRating != nil
+        else {
+            
+            alertMessage = "Please select a mood rating"
             showAlert = true
             return
             
